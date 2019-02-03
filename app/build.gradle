@@ -1,0 +1,128 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+
+    compileSdkVersion deps.build.targetSdk
+    buildToolsVersion deps.build.buildTools
+
+    defaultConfig {
+        applicationId "me.yangcx.example"
+        minSdkVersion deps.build.minSdk
+        targetSdkVersion deps.build.targetSdk
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        sourceSets {
+            main.java.srcDirs += 'src/main/kotlin'
+            test.java.srcDirs += 'src/test/kotlin'
+            androidTest.java.srcDirs += 'src/androidTest/kotlin'
+        }
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(rootProject.ext.storeFile)
+            storePassword rootProject.ext.storePassword
+            keyAlias rootProject.ext.keyAlias
+            keyPassword rootProject.ext.keyPassword
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            //设置打包名称
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        // 显示app名称+当前版本号
+                        def fileName = "Demo_V${variant.versionCode}"
+                        // 加入打包时间
+                        fileName = fileName + "-${releaseTime()}.apk"
+                        outputFileName = fileName
+                    }
+                }
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //anko
+    implementation deps.anko.common
+
+    //kotlin
+    implementation deps.kotlin.stdlib
+    implementation deps.kotlin.reflect
+
+    //coroutines
+    implementation deps.coroutines.core
+    implementation deps.coroutines.android
+
+    //ktx
+    implementation deps.ktx.core
+
+    //support
+    implementation deps.androidx.appcompat
+    implementation deps.androidx.material
+    implementation deps.androidx.multiDex
+
+    //view
+    implementation deps.view.constraintLayout
+
+    //utils
+    implementation deps.utils.joda
+    implementation deps.utils.background
+
+    //log
+    implementation deps.log.logger
+
+    //leakCanary
+    debugImplementation deps.leakCanary.debug
+    debugImplementation deps.leakCanary.fragment
+    releaseImplementation deps.leakCanary.release
+
+    //lifecycle
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.extensions
+    kapt deps.lifecycle.compiler
+
+    //rx
+    implementation deps.rx.java
+    implementation deps.rx.android
+
+
+    //data
+    implementation deps.data.mmkv
+
+    //test
+    testImplementation deps.test.junit
+    androidTestImplementation deps.test.core
+    androidTestImplementation deps.test.junitExt
+}

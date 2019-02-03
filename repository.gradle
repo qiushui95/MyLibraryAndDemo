@@ -1,0 +1,9 @@
+static def addRepos(RepositoryHandler handler) {
+    handler.mavenLocal()
+    handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    handler.maven { url 'https://jitpack.io' }
+    handler.google()
+    handler.jcenter()
+}
+
+ext.addRepos = this.&addRepos
