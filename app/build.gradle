@@ -74,6 +74,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    //module
+    implementation project(":ybase")
+
     //anko
     implementation deps.anko.common
 
