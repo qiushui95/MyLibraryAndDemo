@@ -151,7 +151,7 @@ rxBinding.bindingV7 = "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$rxBind
 deps.rxBinding = rxBinding
 
 def autoDispose = [:]
-autoDispose.version = "1.0.0"
+autoDispose.version = "1.1.0"
 autoDispose.core = "com.uber.autodispose:autodispose-ktx:$autoDispose.version"
 autoDispose.android = "com.uber.autodispose:autodispose-android-ktx:$autoDispose.version"
 autoDispose.androidArchcomponents = "com.uber.autodispose:autodispose-android-archcomponents-ktx:$autoDispose.version"
