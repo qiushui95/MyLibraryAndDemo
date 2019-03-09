@@ -1,2 +1,2 @@
 # MyLibraryAndDemo
-自写库以及使用其他人的库写的Demo
+使用ViewDragHelper实现的拖动子控件Demo
