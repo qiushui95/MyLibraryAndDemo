@@ -7,24 +7,22 @@
     tools:context=".ui.MainActivity">
 
     <TextView
-        android:id="@+id/tvClick"
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="32dp"
-        android:paddingTop="16dp"
-        android:paddingEnd="32dp"
-        android:paddingBottom="16dp"
-        android:text="按钮"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:bl_corners_radius="5dp"
-        app:bl_ripple_color="#000000"
-        app:bl_ripple_enable="true"
-        app:bl_shape="rectangle"
-        app:bl_solid_color="#40E0D0"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="32dp"
+        android:text="进程间通信Demo"
+        android:textColor="#FF0000"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingPrefix" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvGoToAIDL"
+        style="@style/buttonStyle"
+        android:text="AIDL方式"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 </androidx.constraintlayout.widget.ConstraintLayout>
