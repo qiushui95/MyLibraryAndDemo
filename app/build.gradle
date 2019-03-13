@@ -76,6 +76,7 @@ dependencies {
 
     //module
     implementation project(":ybase")
+    implementation project(":yrecycler")
 
     //anko
     implementation deps.anko.common
@@ -120,9 +121,16 @@ dependencies {
     implementation deps.rx.java
     implementation deps.rx.android
 
-
     //data
     implementation deps.data.mmkv
+
+    //EventBus
+    implementation deps.bus.eventBus
+
+    //autoDispose
+    implementation deps.autoDispose.core
+    implementation deps.autoDispose.android
+    implementation deps.autoDispose.androidArchcomponents
 
     //test
     testImplementation deps.test.junit

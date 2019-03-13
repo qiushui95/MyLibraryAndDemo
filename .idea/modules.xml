@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/MyLibraryAndDemo.iml" filepath="$PROJECT_DIR$/MyLibraryAndDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/ybase/ybase.iml" filepath="$PROJECT_DIR$/ybase/ybase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yrecycler/yrecycler.iml" filepath="$PROJECT_DIR$/yrecycler/yrecycler.iml" />
     </modules>
   </component>
 </project>

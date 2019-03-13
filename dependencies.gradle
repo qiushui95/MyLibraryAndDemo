@@ -190,12 +190,8 @@ plugin.aspectJX = "com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.4"
 deps.plugin = plugin
 
 def recyclerView = [:]
-recyclerView.recyclerView = "androidx.recyclerview:recyclerview:$androidx.version"
-def multiType = [:]
-multiType.version = "3.5.0"
-multiType.core = "me.drakeet.multitype:multitype:$multiType.version"
-multiType.ktx = "me.drakeet.multitype:multitype-ktx:$multiType.version"
-recyclerView.multiType = multiType
+recyclerView.core = "androidx.recyclerview:recyclerview:$androidx.version"
+recyclerView.multiType = "me.drakeet.multitype:multitype:3.5.0"
 deps.recyclerView = recyclerView
 
 def paging = [:]
