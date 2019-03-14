@@ -56,6 +56,9 @@
 -keep public class * extends android.app.Fragment
 -keep public class * extends androidx.fragment.app.Fragment
 
+
+-keepattributes *Annotation*
+
 # 保持测试相关的代码
 -dontnote junit.framework.**
 -dontnote junit.runner.**

@@ -19,3 +19,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-keepattributes *Annotation*
+-keep public class * implements me.yangcx.recycler.sundries.IEntity
+-keep public class * extends me.yangcx.recycler.holder.BaseHolder
