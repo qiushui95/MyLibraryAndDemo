@@ -3,7 +3,7 @@ package androidx.recyclerview.widget
 import android.view.View
 
 abstract class BindAwareViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    protected  abstract fun onBind()
+    protected abstract fun onBind()
 
     protected abstract fun onUnbind()
 

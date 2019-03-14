@@ -1,6 +1,5 @@
 package me.yangcx.example.ui
 
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import me.yangcx.base.annotation.BindLayoutRes
@@ -18,9 +17,9 @@ class MainActivity : BaseActivity() {
     }
     private val list by lazy {
         0.until(100)
-            .map {
-                TestData(it + 1, Random.nextInt(100) + 1)
-            }.toMutableList()
+                .map {
+                    TestData(it + 1, Random.nextInt(100) + 1)
+                }.toMutableList()
     }
 
     override fun initAfterUi() {

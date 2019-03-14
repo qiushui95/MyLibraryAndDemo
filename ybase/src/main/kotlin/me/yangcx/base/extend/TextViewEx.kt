@@ -4,5 +4,5 @@ import android.widget.TextView
 import androidx.annotation.StringRes
 
 fun TextView.setText(@StringRes res: Int, vararg args: Any) {
-	text = context.getString(res, *args)
+    text = context.getString(res, *args)
 }

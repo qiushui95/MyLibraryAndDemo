@@ -5,7 +5,7 @@ package me.yangcx.base.viewmodel
  * create by 9745
  * create at 2019/02/04 0004
  */
- enum class ViewModelEvent {
+enum class ViewModelEvent {
 
     CREATED, CLEARED
 }

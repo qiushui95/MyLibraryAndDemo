@@ -9,15 +9,15 @@ import android.os.Bundle
  */
 abstract class ViewModelActivity : BaseActivity() {
 
-	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState)
-		onBindViewModel()
-	}
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        onBindViewModel()
+    }
 
-	/**
-	 * 绑定ViewModel
-	 * create by 97457
-	 * create at 2018/11/29
-	 */
-	protected abstract fun onBindViewModel()
+    /**
+     * 绑定ViewModel
+     * create by 97457
+     * create at 2018/11/29
+     */
+    protected abstract fun onBindViewModel()
 }

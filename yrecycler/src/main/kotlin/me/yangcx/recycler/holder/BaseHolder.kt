@@ -1,8 +1,6 @@
 package me.yangcx.recycler.holder
 
 import android.view.View
-import androidx.recyclerview.widget.BindAwareViewHolder
-import androidx.recyclerview.widget.RecyclerView
 import me.yangcx.recycler.sundries.IEntity
 
 abstract class BaseHolder<T : IEntity>(itemView: View) : AutoDisposeViewHolder(itemView) {

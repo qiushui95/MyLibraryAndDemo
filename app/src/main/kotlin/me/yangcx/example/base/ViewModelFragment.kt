@@ -10,10 +10,10 @@ import android.view.View
  */
 abstract class ViewModelFragment : BaseFragment() {
 
-	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-		super.onViewCreated(view, savedInstanceState)
-		onBindViewModel(view)
-	}
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        onBindViewModel(view)
+    }
 
-	protected abstract fun onBindViewModel(rootView: View)
+    protected abstract fun onBindViewModel(rootView: View)
 }
