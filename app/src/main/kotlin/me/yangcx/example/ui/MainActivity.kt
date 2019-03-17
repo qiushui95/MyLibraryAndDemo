@@ -1,53 +1,57 @@
 package me.yangcx.example.ui
 
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import android.util.Log
+import androidx.constraintlayout.widget.ConstraintSet
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
+import androidx.transition.TransitionManager
+import com.google.android.material.bottomnavigation.LabelVisibilityMode
 import kotlinx.android.synthetic.main.activity_main.*
 import me.yangcx.base.annotation.BindLayoutRes
 import me.yangcx.example.R
 import me.yangcx.example.base.BaseActivity
-import me.yangcx.recycler.adapter.CommonAdapter
-import org.greenrobot.eventbus.EventBus
-import org.greenrobot.eventbus.Subscribe
-import kotlin.random.Random
 
 @BindLayoutRes(R.layout.activity_main)
 class MainActivity : BaseActivity() {
-    private val adapter by lazy {
-        CommonAdapter(this)
+    private val bottomShowConstraintSet by lazy {
+        ConstraintSet().apply {
+            clone(clContainer)
+        }
     }
-    private val list by lazy {
-        0.until(100)
-                .map {
-                    TestData(it + 1, Random.nextInt(100) + 1)
-                }.toMutableList()
+    private val bottomHideConstraintSet by lazy {
+        ConstraintSet().apply {
+            clone(clContainer)
+            clear(bnvBottom.id)
+            connect(bnvBottom.id, ConstraintSet.START, clContainer.id, ConstraintSet.START)
+            connect(bnvBottom.id, ConstraintSet.END, clContainer.id, ConstraintSet.END)
+            connect(bnvBottom.id, ConstraintSet.TOP, clContainer.id, ConstraintSet.BOTTOM)
+        }
     }
 
     override fun initAfterUi() {
-        EventBus.getDefault().register(this)
-        rvContent.layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
-        adapter.register(TestDataHolder::class)
-        rvContent.adapter = adapter
-        adapter.items = list
+        val navController = findNavController(R.id.fragmentContainer)
+        bnvBottom.setupWithNavController(navController)
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            if (destination.id == R.id.moreFragment) {
+                changeBottomVisible(false)
+            } else {
+                changeBottomVisible(true)
+            }
+        }
+        bnvBottom.isItemHorizontalTranslationEnabled=false
+        bnvBottom.labelVisibilityMode = LabelVisibilityMode.LABEL_VISIBILITY_LABELED
     }
 
     override fun onBindViewListener() {
 
     }
 
-    @Subscribe
-    fun itemClick(data: TestData) {
-        val testData = list.first {
-            it.isItemSame(data)
+    private fun changeBottomVisible(isVisible: Boolean) {
+        TransitionManager.beginDelayedTransition(clContainer)
+        if (isVisible) {
+            bottomShowConstraintSet.applyTo(clContainer)
+        } else {
+            bottomHideConstraintSet.applyTo(clContainer)
         }
-        testData.data--
-        if (testData.data <= 0) {
-            list.remove(testData)
-        }
-        adapter.items = list
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        EventBus.getDefault().unregister(this)
     }
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_home"
+    app:startDestination="@id/homeBottomHome">
+
+    <fragment
+        android:id="@+id/homeBottomHome"
+        android:name="me.yangcx.example.ui.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/to_more_fragment"
+            app:destination="@id/moreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeBottomProject"
+        android:name="me.yangcx.example.ui.SafeFragment"
+        android:label="SafeFragment" />
+    <fragment
+        android:id="@+id/homeBottomSafe"
+        android:name="me.yangcx.example.ui.ProjectFragment"
+        android:label="ProjectFragment" />
+    <fragment
+        android:id="@+id/homeBottomSearch"
+        android:name="me.yangcx.example.ui.SearchFragment"
+        android:label="SearchFragment" />
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="me.yangcx.example.ui.MoreFragment"
+        android:label="MoreFragment" />
+</navigation>

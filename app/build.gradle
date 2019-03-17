@@ -4,6 +4,10 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'androidx.navigation.safeargs'
+
 android {
 
     compileSdkVersion deps.build.targetSdk
@@ -124,13 +128,15 @@ dependencies {
     //data
     implementation deps.data.mmkv
 
-    //EventBus
-    implementation deps.bus.eventBus
-
     //autoDispose
     implementation deps.autoDispose.core
     implementation deps.autoDispose.android
     implementation deps.autoDispose.androidArchcomponents
+
+    //navigation
+    implementation deps.navigation.runtimeKtx
+    implementation deps.navigation.fragmentKtx
+    implementation deps.navigation.uiKtx
 
     //test
     testImplementation deps.test.junit

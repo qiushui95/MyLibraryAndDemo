@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeBottomHome"
+        android:icon="@drawable/vector_drawable_home"
+        android:title="首页" />
+    <item
+        android:id="@+id/homeBottomProject"
+        android:icon="@drawable/vector_drawable_project"
+        android:title="工程" />
+    <item
+        android:id="@+id/homeBottomSafe"
+        android:icon="@drawable/vector_drawable_safe"
+        android:title="安全" />
+    <item
+        android:id="@+id/homeBottomSearch"
+        android:icon="@drawable/vector_drawable_search"
+        android:title="查找" />
+</menu>

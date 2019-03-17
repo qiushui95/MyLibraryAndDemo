@@ -160,7 +160,6 @@ autoDispose.lifecycleKtx = "com.uber.autodispose:autodispose-lifecycle-ktx:$auto
 deps.autoDispose = autoDispose
 
 def navigation = [:]
-
 navigation.version = "2.0.0"
 navigation.runtime = "androidx.navigation:navigation-runtime:$navigation.version"
 navigation.runtimeKtx = "androidx.navigation:navigation-runtime-ktx:$navigation.version"
@@ -188,7 +187,7 @@ plugin.android = "com.android.tools.build:gradle:3.2.1"
 plugin.kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin.version"
 plugin.allOpen = "org.jetbrains.kotlin:kotlin-allopen:$kotlin.version"
 plugin.noArg = "org.jetbrains.kotlin:kotlin-noarg:$kotlin.version"
-plugin.navigationSafeArgs = "android.arch.navigation:navigation-safe-args-gradle-plugin:$navigation.version"
+plugin.navigationSafeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation.version"
 plugin.aspectJX = "com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.4"
 deps.plugin = plugin
 
