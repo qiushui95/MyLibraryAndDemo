@@ -160,12 +160,15 @@ autoDispose.lifecycleKtx = "com.uber.autodispose:autodispose-lifecycle-ktx:$auto
 deps.autoDispose = autoDispose
 
 def navigation = [:]
-navigation.version = "1.0.0-alpha07"
-navigation.runtime = "android.arch.navigation:navigation-runtime:$navigation.version"
-navigation.runtimeKtx = "android.arch.navigation:navigation-runtime-ktx:$navigation.version"
-navigation.fragment = "android.arch.navigation:navigation-fragment:$navigation.version"
-navigation.fragmentKtx = "android.arch.navigation:navigation-fragment-ktx:$navigation.version"
-navigation.testingKtx = "android.arch.navigation:navigation-testing-ktx:$navigation.version"
+
+navigation.version = "2.0.0"
+navigation.runtime = "androidx.navigation:navigation-runtime:$navigation.version"
+navigation.runtimeKtx = "androidx.navigation:navigation-runtime-ktx:$navigation.version"
+navigation.fragment = "androidx.navigation:navigation-fragment:$navigation.version"
+navigation.fragmentKtx = "androidx.navigation:navigation-fragment-ktx:$navigation.version"
+navigation.ui = "androidx.navigation:navigation-ui:$navigation.version"
+navigation.uiKtx = "androidx.navigation:navigation-ui-ktx:$navigation.version"
+navigation.testingKtx = "androidx.navigation::navigation-testing-ktx:$navigation.version"
 deps.navigation = navigation
 
 def test = [:]
