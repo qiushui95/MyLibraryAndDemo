@@ -160,7 +160,6 @@ autoDispose.lifecycleKtx = "com.uber.autodispose:autodispose-lifecycle-ktx:$auto
 deps.autoDispose = autoDispose
 
 def navigation = [:]
-
 navigation.version = "2.0.0"
 navigation.runtime = "androidx.navigation:navigation-runtime:$navigation.version"
 navigation.runtimeKtx = "androidx.navigation:navigation-runtime-ktx:$navigation.version"
