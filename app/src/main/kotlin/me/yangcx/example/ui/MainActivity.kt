@@ -13,7 +13,7 @@ import kotlin.random.Random
 @BindLayoutRes(R.layout.activity_main)
 class MainActivity : BaseActivity() {
     private val adapter by lazy {
-        CommonAdapter(this)
+        CommonAdapter()
     }
     private val list by lazy {
         0.until(100)

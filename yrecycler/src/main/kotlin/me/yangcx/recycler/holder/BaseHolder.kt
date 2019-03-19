@@ -1,9 +1,10 @@
 package me.yangcx.recycler.holder
 
 import android.view.View
+import androidx.recyclerview.widget.BindAwareViewHolder
 import me.yangcx.recycler.sundries.IEntity
 
-abstract class BaseHolder<T : IEntity>(itemView: View) : AutoDisposeViewHolder(itemView) {
+abstract class BaseHolder<T : IEntity>(itemView: View) : BindAwareViewHolder(itemView) {
     lateinit var data: T
 
     /**
@@ -20,4 +21,12 @@ abstract class BaseHolder<T : IEntity>(itemView: View) : AutoDisposeViewHolder(i
      * View创建之后的回调
      */
     open fun onViewCreated(itemView: View) {}
+
+    override fun onBind() {
+
+    }
+
+    override fun onUnbind() {
+
+    }
 }

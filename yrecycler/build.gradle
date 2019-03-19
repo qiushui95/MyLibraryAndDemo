@@ -42,18 +42,11 @@ dependencies {
     api deps.recyclerView.core
     api deps.recyclerView.multiType
 
-    //autoDispose
-    implementation deps.autoDispose.core
-    implementation deps.autoDispose.android
-    implementation deps.autoDispose.androidArchcomponents
 
-    //lifecycle
-    implementation deps.lifecycle.runtime
-    implementation deps.lifecycle.extensions
-    kapt deps.lifecycle.compiler
 
-    //rx
-    implementation deps.rx.java
+    //coroutines
+    implementation deps.coroutines.core
+    implementation deps.coroutines.android
 
     //test
     testImplementation deps.test.junit
