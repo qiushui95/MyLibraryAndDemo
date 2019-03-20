@@ -11,7 +11,7 @@ import io.reactivex.subjects.BehaviorSubject
  * create by 9745
  * create at 2019/02/04 0004
  */
-class AutoDisposeViewModel : ViewModel(), LifecycleScopeProvider<ViewModelEvent> {
+open class AutoDisposeViewModel : ViewModel(), LifecycleScopeProvider<ViewModelEvent> {
 
     companion object {
         private val CORRESPONDING_EVENTS = CorrespondingEventsFunction<ViewModelEvent> {

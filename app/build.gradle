@@ -112,6 +112,18 @@ dependencies {
     debugImplementation deps.leakCanary.fragment
     releaseImplementation deps.leakCanary.release
 
+    //retrofit
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.coroutines
+    implementation deps.retrofit.converter.gson
+
+    //json
+    implementation deps.json.gson
+
+    //koin
+    implementation deps.koin.core
+    implementation deps.koin.viewModel
+
     //lifecycle
     implementation deps.lifecycle.runtime
     implementation deps.lifecycle.extensions
