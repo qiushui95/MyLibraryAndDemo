@@ -77,6 +77,7 @@ dependencies {
     //module
     implementation project(":ybase")
     implementation project(":yrecycler")
+    implementation project(":yhttp")
 
     //anko
     implementation deps.anko.common
@@ -111,6 +112,14 @@ dependencies {
     debugImplementation deps.leakCanary.debug
     debugImplementation deps.leakCanary.fragment
     releaseImplementation deps.leakCanary.release
+
+    //okHttp
+    debugImplementation(deps.okHttp.chuck.debug) {
+        exclude group: 'com.android.support'
+    }
+    releaseImplementation(deps.okHttp.chuck.release) {
+        exclude group: 'com.squareup.okhttp3'
+    }
 
     //retrofit
     implementation deps.retrofit.runtime

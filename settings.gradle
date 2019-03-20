@@ -1,1 +1,1 @@
-include ':app', ':ybase', ':yrecycler'
+include ':app', ':ybase', ':yrecycler', ':yhttp'

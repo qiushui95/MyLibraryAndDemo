@@ -81,6 +81,8 @@ koin.core = "org.koin:koin-androidx-scope:$koin.version"
 koin.viewModel = "org.koin:koin-androidx-viewmodel:$koin.version"
 deps.koin = koin
 
+
+
 def retrofit = [:]
 retrofit.version = "2.4.0"
 retrofit.runtime = "com.squareup.retrofit2:retrofit:$retrofit.version"
@@ -94,14 +96,6 @@ retrofit.adapter = adapter
 retrofit.mock = "com.squareup.retrofit2:retrofit-mock:$retrofit.version"
 deps.retrofit = retrofit
 
-def dagger = [:]
-dagger.version = "2.19"
-dagger.runtime = "com.google.dagger:dagger:$dagger.version"
-dagger.android = "com.google.dagger:dagger-android:$dagger.version"
-dagger.androidSupport = "com.google.dagger:dagger-android-support:$dagger.version"
-dagger.compiler = "com.google.dagger:dagger-compiler:$dagger.version"
-dagger.androidSupportCompiler = "com.google.dagger:dagger-android-processor:$dagger.version"
-deps.dagger = dagger
 
 def kotlin = [:]
 kotlin.version = "1.3.11"

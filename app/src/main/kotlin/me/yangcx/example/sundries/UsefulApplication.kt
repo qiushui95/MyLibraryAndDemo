@@ -2,6 +2,8 @@ package me.yangcx.example.sundries
 
 import android.app.Application
 import androidx.multidex.MultiDexApplication
+import com.orhanobut.logger.AndroidLogAdapter
+import com.orhanobut.logger.Logger
 import com.squareup.leakcanary.LeakCanary
 import me.yangcx.example.koin.*
 import org.koin.android.ext.android.startKoin
@@ -28,5 +30,6 @@ class UsefulApplication : MultiDexApplication() {
                 ViewModelModule.instance
             )
         )
+        Logger.addLogAdapter(AndroidLogAdapter())
     }
 }

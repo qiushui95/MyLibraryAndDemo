@@ -8,6 +8,7 @@ import me.yangcx.example.R
 import me.yangcx.example.base.BaseActivity
 import me.yangcx.example.base.ViewModelActivity
 import me.yangcx.example.viewmodel.MainViewModel
+import me.yangcx.http.state.RequestState
 import me.yangcx.recycler.adapter.CommonAdapter
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe

@@ -1,7 +1,8 @@
 package me.yangcx.example.api
 
 import androidx.lifecycle.LiveData
-import me.yangcx.example.ui.TestData
+import me.yangcx.example.ui.TestResult
+import me.yangcx.http.state.RequestState
 import retrofit2.http.GET
 
 /**
@@ -10,5 +11,5 @@ import retrofit2.http.GET
  */
 interface TestService {
     @GET("5hH3sYfb6c6ae86fc0cd75b6afab3f7023c37b6f55614c9?uri=api/getDataList")
-    fun getDataList(): LiveData<List<TestData>>
+    fun getDataList(): LiveData<RequestState<TestResult>>
 }
